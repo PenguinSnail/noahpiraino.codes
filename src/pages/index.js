@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -6,10 +7,19 @@ import SEO from '../components/seo';
 const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" />
-		<h1>Hi people</h1>
-		<p>Welcome to your new Gatsby site.</p>
-		<p>Now go build something great.</p>
-		<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
+		<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+			<h2 style={{ margin: 0 }}>
+				<Link
+					to="/posts/"
+					style={{
+						color: '#000000',
+						textDecoration: `none`,
+					}}
+				>
+					Go to Posts!
+				</Link>
+			</h2>
+		</div>
 	</Layout>
 );
 

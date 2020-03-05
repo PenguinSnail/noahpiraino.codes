@@ -1,46 +1,26 @@
 /**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
+ * Layout component is used as a wrapper to provide consistent page layouts
+ * Styles in the layout scss will affect the body page as they are rendered as children here
+ * Layout provides a page with the header and footer, and some width restraints
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 import Header from './header';
-import './layout.css';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
+	const { title } = useSiteMetadata();
 
 	return (
-		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
-			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-					padding: `0 1.0875rem 1.45rem`,
-				}}
-			>
+			<div className="layout-container">
+				<Header siteTitle={title} />
 				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>
-				</footer>
+				<Footer />
 			</div>
-		</>
 	);
 };
 
