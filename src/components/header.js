@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => (
 				</ul>
 			</nav>
 		</div>
-		<hr style={{ marginTop: '1.45rem' }} />
+		<hr className="bottom-divider" />
 	</header>
 );
 

@@ -5,7 +5,10 @@
 }
 
 nav.navbar h1 {
-	margin-bottom: 7px;
+	margin-bottom: 10px;
+}
+header hr.bottom-divider {
+	margin-top: 1rem;
 }
 // list for nav tabs
 nav.navbar ul {
@@ -36,6 +39,9 @@ nav.navbar ul li a.nav-active {
 	}
 	nav.navbar h1 {
 		margin-bottom: 0px;
+	}
+	header hr.bottom-divider {
+		margin-top: 1.45rem;
 	}
 	// spacer to right align nav tabs
 	nav.navbar .spacer {

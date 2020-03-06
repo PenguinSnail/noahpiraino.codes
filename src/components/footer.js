@@ -8,6 +8,10 @@ const Footer = () => (
 				© {new Date().getFullYear()}, Built with
 				{` `}
 				<a href="https://www.gatsbyjs.org">Gatsby</a>
+				{`, `}
+				hosted on
+				{` `}
+				<a href="https://www.netlify.com">Netlify</a>
 			</small>
 		</div>
 	</footer>

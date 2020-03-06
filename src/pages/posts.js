@@ -1,54 +1,36 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
+
+import getPosts from '../hooks/getPosts';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import PostLink from '../components/postLink';
 
-export const query = graphql`
-	query SITE_INDEX_QUERY {
-		allMdx(
-			sort: { fields: [frontmatter___date], order: DESC }
-			filter: { frontmatter: { published: { eq: true } } }
-		) {
-			nodes {
-				id
-				excerpt(pruneLength: 250)
-				frontmatter {
-					title
-					date
-				}
-				fields {
-					slug
-				}
-			}
-		}
-	}
-`;
+const PostsPage = () => {
+	const posts = getPosts();
 
-const dateOptions = {
-	year: 'numeric',
-	month: 'long',
-	day: 'numeric',
+	return (
+		<Layout>
+			<SEO title="Posts" />
+			{posts.length < 1 && (
+				<div style={{ textAlign: 'center' }}>
+					It doesn't look like there are any posts yet!
+				</div>
+			)}
+			{posts.map(({ id, excerpt, frontmatter, fields }, i) => (
+				<div key={id}>
+					{i > 0 && <hr />}
+					<PostLink
+						slug={fields.slug}
+						title={frontmatter.title}
+						date={frontmatter.date}
+						excerpt={excerpt}
+					/>
+				</div>
+			))}
+		</Layout>
+	);
 };
-
-const PostsPage = ({ data }) => (
-	<Layout>
-		<SEO title="Posts" />
-		{data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }, i) => (
-			<div key={id}>
-				{i > 0 && <hr />}
-				<Link style={{ textDecoration: 'none', color: '#000000' }} to={fields.slug}>
-					<div>
-						<h1 style={{ marginBottom: '0.3rem' }}>{frontmatter.title}</h1>
-						<p style={{ marginBottom: '0.5rem' }}>
-							{new Date(frontmatter.date).toLocaleDateString('en-US', dateOptions)}
-						</p>
-					</div>
-					<p style={{ marginLeft: '1rem' }}>{excerpt}</p>
-				</Link>
-			</div>
-		))}
-	</Layout>
-);
 
 export default PostsPage;
