@@ -1,61 +1,11 @@
+@import './variables.scss';
+
 .layout-container {
 	margin: 0 auto;
 	max-width: 960px;
 	padding: 1.45rem 1.0875rem;
 }
 
-nav.navbar h1 {
-	margin-bottom: 10px;
-}
-header hr.bottom-divider {
-	margin-top: 1rem;
-}
-// list for nav tabs
-nav.navbar ul {
-	// disable bullets
-	list-style-type: none;
-	// zero out spacing
-	padding: 0;
-	margin: 0;
-}
-// tab item
-nav.navbar ul li {
-	display: inline;
-	font-size: 1em;
-}
-// give nav links some margin
-nav.navbar ul li a {
-	margin: 8px 8px 8px 0px;
-}
-// simple underline on the current link
-nav.navbar ul li a.nav-active {
-	border-bottom: 2px solid #000000;
-}
-
-@media screen and (min-width: 600px) {
-	// used for navigation bar
-	nav.navbar {
-		display: flex;
-	}
-	nav.navbar h1 {
-		margin-bottom: 0px;
-	}
-	header hr.bottom-divider {
-		margin-top: 1.45rem;
-	}
-	// spacer to right align nav tabs
-	nav.navbar .spacer {
-		flex: auto;
-	}
-	nav.navbar ul {
-		text-align: right;
-	}
-	// tab item
-	nav.navbar ul li {
-		font-size: 1.25em;
-	}
-	// give nav links some margin
-	nav.navbar ul li a {
-		margin: 8px;
-	}
+a {
+	color: $link-color;
 }

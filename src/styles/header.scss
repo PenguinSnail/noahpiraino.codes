@@ -1,0 +1,67 @@
+@import './variables.scss';
+
+// styles for the header navbar
+
+nav.navbar .navbar-title {
+	margin-bottom: 10px;
+}
+
+nav.navbar .navbar-link {
+	color: #000000;
+	text-decoration: none;
+}
+
+// list for nav tabs
+nav.navbar .navbar-link-list {
+	// disable bullets
+	list-style-type: none;
+	// zero out spacing
+	padding: 0;
+	margin: 0;
+}
+// tab item
+nav.navbar .navbar-link-list-item {
+	display: inline;
+	font-size: 1em;
+}
+// give nav links some margin
+nav.navbar .navbar-link-list-item a {
+	margin: 8px 8px 8px 0px;
+	color: $link-color;
+}
+// simple underline on the current link
+nav.navbar .navbar-link-list-item a.nav-active {
+	border-bottom: 2px solid $link-color;
+}
+
+@media screen and (min-width: 600px) {
+	// used for navigation bar
+	nav.navbar {
+		display: flex;
+	}
+	nav.navbar .navbar-title {
+		margin-bottom: 0px;
+	}
+	nav.navbar .header-bottom-divider {
+		margin-top: 1.45rem;
+	}
+	// spacer to right align nav tabs
+	nav.navbar .spacer {
+		flex: auto;
+	}
+	nav.navbar .navbar-link-list {
+		text-align: right;
+	}
+	// tab item
+	nav.navbar .navbar-link-list-item {
+		font-size: 1.25em;
+	}
+	// give nav links some margin
+	nav.navbar .navbar-link-list-item a {
+		margin: 8px;
+	}
+}
+
+.header-bottom-divider {
+	margin-top: 1rem;
+}

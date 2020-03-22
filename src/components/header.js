@@ -2,42 +2,46 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import '../styles/header.scss';
+
 const Header = ({ siteTitle }) => (
 	<header style={{ marginBottom: '1.45rem' }}>
 		<div>
 			<nav className="navbar">
-				<h1>
+				<h1 className="navbar-title">
 					<Link
 						to="/"
-						style={{
-							color: '#000000',
-							textDecoration: `none`,
-						}}
+						className="navbar-link"
 					>
 						{siteTitle}
 					</Link>
 				</h1>
 				<span className="spacer" />
-				<ul>
-					<li>
+				<ul className="navbar-link-list">
+					<li className="navbar-link-list-item">
 						<Link
 							to="/posts"
 							activeClassName="nav-active"
 							getProps={({ isPartiallyCurrent }) => {
-								return isPartiallyCurrent ? { className: 'nav-active' } : null;
-							}}
-							style={{
-								color: '#000000',
-								textDecoration: `none`,
+								return isPartiallyCurrent ? { className: 'navbar-link nav-active' } : { className: 'navbar-link' };
 							}}
 						>
 							Posts
+						</Link>
+						<Link
+							to="/projects"
+							activeClassName="nav-active"
+							getProps={({ isPartiallyCurrent }) => {
+								return isPartiallyCurrent ? { className: 'navbar-link nav-active' } : { className: 'navbar-link' };
+							}}
+						>
+							Projects
 						</Link>
 					</li>
 				</ul>
 			</nav>
 		</div>
-		<hr className="bottom-divider" />
+		<hr className="header-bottom-divider" />
 	</header>
 );
 

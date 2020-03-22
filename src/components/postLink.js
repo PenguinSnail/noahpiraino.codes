@@ -4,11 +4,13 @@ import { Link } from 'gatsby';
 
 import dateOptions from '../utils/dateOptions';
 
+import '../styles/postLink.scss';
+
 const PostLink = ({ slug, title, date, excerpt, style }) => {
 	return (
 		<Link style={{ textDecoration: 'none', color: '#000000' }} to={slug}>
 			<div>
-				<h1 style={{ marginBottom: '0.3rem' }}>{title}</h1>
+				<h1 className="post-link-header">{title}</h1>
 				<p style={{ marginBottom: '0.5rem' }}>
 					{new Date(date).toLocaleDateString('en-US', dateOptions)}
 				</p>
