@@ -25,19 +25,25 @@ const IndexPage = () => {
 					<ul className="home-link-list">
 						<li>
 							<div className="home-link-list-icon-container">
-								<FontAwesomeIcon icon={faProjectDiagram} />
+								<Link to="/projects">
+									<FontAwesomeIcon icon={faProjectDiagram} />
+								</Link>
 							</div>
 							Check out a list of <Link to="/projects">my projects</Link>
 						</li>
 						<li>
 							<div className="home-link-list-icon-container">
-								<FontAwesomeIcon icon={faCode} />
+								<a href="https://github.com/penguinsnail/">
+									<FontAwesomeIcon icon={faCode} />
+								</a>
 							</div>
 							Take a look at the code on <a href="https://github.com/penguinsnail/">my GitHub</a>
 						</li>
 						<li>
 							<div className="home-link-list-icon-container">
-								<FontAwesomeIcon icon={faPen} />
+								<Link to="/posts">
+									<FontAwesomeIcon icon={faPen} />
+								</Link>
 							</div>
 							Read some of <Link to="/posts">my posts</Link>
 						</li>
