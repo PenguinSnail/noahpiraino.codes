@@ -22,32 +22,64 @@ const IndexPage = () => {
 						to serve as a blog to document my personal projects, and also as a portfolio
 						to share my work.
 					</div>
-					<ul className="home-link-list">
-						<li>
-							<div className="home-link-list-icon-container">
-								<Link to="/projects">
-									<FontAwesomeIcon icon={faProjectDiagram} />
-								</Link>
-							</div>
+					<div className="home-links-container">
+						<div style={{
+							gridColumnStart: 1,
+							gridColumnEnd: 2,
+							gridRowStart: 1,
+							gridRowEnd: 2
+						}}>
+							<Link to="/projects">
+								<FontAwesomeIcon icon={faProjectDiagram} />
+							</Link>
+						</div>
+						<div style={{
+							gridColumnStart: 2,
+							gridColumnEnd: 3,
+							gridRowStart: 1,
+							gridRowEnd: 2
+						}}>
 							Check out a list of <Link to="/projects">my projects</Link>
-						</li>
-						<li>
-							<div className="home-link-list-icon-container">
-								<a href="https://github.com/penguinsnail/">
-									<FontAwesomeIcon icon={faCode} />
-								</a>
-							</div>
+						</div>
+
+						<div style={{
+							gridColumnStart: 1,
+							gridColumnEnd: 2,
+							gridRowStart: 2,
+							gridRowEnd: 3
+						}}>
+							<a href="https://github.com/penguinsnail/">
+								<FontAwesomeIcon icon={faCode} />
+							</a>
+						</div>
+						<div style={{
+							gridColumnStart: 2,
+							gridColumnEnd: 3,
+							gridRowStart: 2,
+							gridRowEnd: 3
+						}}>
 							Take a look at the code on <a href="https://github.com/penguinsnail/">my GitHub</a>
-						</li>
-						<li>
-							<div className="home-link-list-icon-container">
-								<Link to="/posts">
-									<FontAwesomeIcon icon={faPen} />
-								</Link>
-							</div>
+						</div>
+
+						<div style={{
+							gridColumnStart: 1,
+							gridColumnEnd: 2,
+							gridRowStart: 3,
+							gridRowEnd: 4
+						}}>
+							<Link to="/posts">
+								<FontAwesomeIcon icon={faPen} />
+							</Link>
+						</div>
+						<div style={{
+							gridColumnStart: 2,
+							gridColumnEnd: 3,
+							gridRowStart: 3,
+							gridRowEnd: 4
+						}}>
 							Read some of <Link to="/posts">my posts</Link>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</Layout>
