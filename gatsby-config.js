@@ -25,7 +25,8 @@ module.exports = {
 							maxWidth: 1000,
 							showCaptions: true,
 							markdownCaptions: true,
-							wrapperStyle: 'text-align: center; color: gray; font-size: 0.9em;'
+							wrapperStyle: 'text-align: center; color: gray; font-size: 0.9em;',
+							tracedSVG: true,
 						},
 					},
 				],
@@ -73,6 +74,7 @@ module.exports = {
 							allMdx(
 								sort: { fields: [frontmatter___date], order: DESC }
 								filter: { frontmatter: { published: { eq: true } } }
+								limit: 15
 							) {
 								nodes {
 									html
@@ -88,7 +90,7 @@ module.exports = {
 							}
 						}`,
 						match: "^/posts/",
-						output: '/rss.xml',
+						output: '/feeds/rss.xml',
 						title: "Noah Piraino Codes",
 					},
 				],
