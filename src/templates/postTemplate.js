@@ -7,6 +7,8 @@ import Layout from '../components/layout';
 
 import dateOptions from '../utils/dateOptions';
 
+import '../styles/postTemplate.scss';
+
 export const query = graphql`
 	query postBySlug($slug: String!) {
 		mdx(fields: { slug: { eq: $slug } }) {
@@ -14,6 +16,7 @@ export const query = graphql`
 			frontmatter {
 				title
 				date
+				keywords
 			}
 		}
 	}
@@ -23,13 +26,15 @@ export default ({ data }) => {
 	const { frontmatter, body } = data.mdx;
 	return (
 		<>
-			<SEO title={frontmatter.title} />
+			<SEO title={frontmatter.title} keywords={frontmatter.keywords ? frontmatter.keywords : null} />
 			<Layout>
 				<h1 style={{ marginBottom: '0.3rem' }}>{frontmatter.title}</h1>
 				<p style={{ marginBottom: '3rem' }}>
 					{new Date(frontmatter.date).toLocaleDateString('en-US', dateOptions)}
 				</p>
-				<MDXRenderer>{body}</MDXRenderer>
+				<div className="post-content">
+					<MDXRenderer>{body}</MDXRenderer>
+				</div>
 			</Layout>
 		</>
 	);

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import useSiteMetadata from '../hooks/useSiteMetadata';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, keywords }) {
 	const siteMetadata = useSiteMetadata();
 
 	const metaDescription = description || siteMetadata.description;
@@ -21,6 +21,10 @@ function SEO({ description, lang, meta, title }) {
 					name: `description`,
 					content: metaDescription,
 				},
+				keywords ? {
+					name: `keywords`,
+					content: keywords.join(', '),
+				} : {},
 				{
 					property: `og:title`,
 					content: title,
@@ -65,6 +69,7 @@ SEO.propTypes = {
 	lang: PropTypes.string,
 	meta: PropTypes.arrayOf(PropTypes.object),
 	title: PropTypes.string.isRequired,
+	keywords: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default SEO;
