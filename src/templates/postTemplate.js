@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 
 import dateOptions from '../utils/dateOptions';
 
-import '../styles/postTemplate.scss';
+import '../styles/templates/postTemplate.scss';
 
 export const query = graphql`
 	query postBySlug($slug: String!) {
@@ -28,8 +28,8 @@ export default ({ data }) => {
 		<>
 			<SEO title={frontmatter.title} keywords={frontmatter.keywords ? frontmatter.keywords : null} />
 			<Layout>
-				<h1 style={{ marginBottom: '0.3rem' }}>{frontmatter.title}</h1>
-				<p style={{ marginBottom: '3rem' }}>
+				<h1 className="post-title">{frontmatter.title}</h1>
+				<p className="post-date">
 					{new Date(frontmatter.date).toLocaleDateString('en-US', dateOptions)}
 				</p>
 				<div className="post-content">

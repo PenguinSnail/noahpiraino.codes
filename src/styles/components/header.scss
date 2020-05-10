@@ -1,6 +1,10 @@
-@import './variables.scss';
+@import '../variables.scss';
 
 // styles for the header navbar
+
+.header {
+	margin-bottom: 1.45rem;
+}
 
 nav.navbar .navbar-title {
 	margin-bottom: 10px;

@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+.body {
+	margin-bottom: 2.25rem;
+}
+
+.title {
+	margin-top: 2.25rem;
+}
+
+.content {
+	margin: auto;
+	width: 80%;
+}
+
+.home-links-container {
+	display: grid;
+	grid-template-columns: 2.25rem auto;
+	margin-top: 1rem;
+}
+
+.home-links-container > * {
+	margin-top: 0.75rem;
+}
+
+.portrait {
+	border-radius: 50%;
+	transform: scaleX(-1);
+
+	margin: 1.5rem auto 0;
+	max-width: 500px;
+}

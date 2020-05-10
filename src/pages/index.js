@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,15 +7,30 @@ import SEO from '../components/seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faProjectDiagram, faCode } from '@fortawesome/free-solid-svg-icons';
 
-import '../styles/index.scss';
+import Img from 'gatsby-image';
 
-const IndexPage = () => {
+import '../styles/pages/index.scss';
+
+// query to pull in the profile picture
+export const query = graphql`
+	query PortraitQuery {
+		file(relativePath: {eq: "portrait.jpg"}) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid_tracedSVG
+				}
+			}
+		}
+	}
+`;
+
+const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<div style={{ marginBottom: `2.25rem` }}>
-				<h2 style={{ marginTop: '2.25rem' }}>Hi, I'm Noah.</h2>
-				<div style={{ margin: 'auto', width: '80%' }}>
+			<div className="body">
+				<h2 className="title">Hi, I'm Noah.</h2>
+				<div className="content">
 					<div>
 						I'm a High School student from North Carolina with an interest in computer
 						science, photography, and other miscellaneous hobbies. This website is here
@@ -80,6 +95,7 @@ const IndexPage = () => {
 							Read some of <Link to="/posts">my posts</Link>
 						</div>
 					</div>
+					<Img className="portrait" fluid={data.file.childImageSharp.fluid} />
 				</div>
 			</div>
 		</Layout>

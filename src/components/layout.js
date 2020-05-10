@@ -12,6 +12,8 @@ import useSiteMetadata from '../hooks/useSiteMetadata';
 import Header from './header';
 import Footer from './footer';
 
+import '../styles/components/layout.scss';
+
 const Layout = ({ children }) => {
 	const { title } = useSiteMetadata();
 

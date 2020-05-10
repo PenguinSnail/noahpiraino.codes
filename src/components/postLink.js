@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import dateOptions from '../utils/dateOptions';
 
-import '../styles/postLink.scss';
+import '../styles/components/postLink.scss';
 
 const PostLink = ({ slug, title, date, excerpt, style }) => {
 	return (
