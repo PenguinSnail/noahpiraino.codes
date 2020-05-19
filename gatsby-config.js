@@ -100,6 +100,7 @@ module.exports = {
 			resolve: `gatsby-plugin-typography`,
 			options: {
 				pathToConfigModule: `${__dirname}/src/utils/typography`,
+				omitGoogleFont: true,
 			},
 		},
 	],
