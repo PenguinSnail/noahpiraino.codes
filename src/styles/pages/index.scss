@@ -1,14 +1,14 @@
 @import '../variables.scss';
 
-.body {
+.home-body {
 	margin-bottom: 2.25rem;
 }
 
-.title {
+.home-title {
 	margin-top: 2.25rem;
 }
 
-.content {
+.home-content {
 	margin: auto;
 	width: 80%;
 }
@@ -23,7 +23,7 @@
 	margin-top: 0.75rem;
 }
 
-.portrait {
+.home-portrait {
 	border-radius: 50%;
 	transform: scaleX(-1);
 

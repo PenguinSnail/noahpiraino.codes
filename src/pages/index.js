@@ -16,7 +16,7 @@ export const query = graphql`
 	query PortraitQuery {
 		file(relativePath: {eq: "portrait.jpg"}) {
 			childImageSharp {
-				fluid {
+				fluid(maxWidth: 500) {
 					...GatsbyImageSharpFluid_tracedSVG
 				}
 			}
@@ -28,9 +28,9 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<div className="body">
-				<h2 className="title">Hi, I'm Noah.</h2>
-				<div className="content">
+			<div className="home-body">
+				<h2 className="home-title">Hi, I'm Noah.</h2>
+				<div className="home-content">
 					<div>
 						I'm a High School student from North Carolina with an interest in computer
 						science, photography, and other miscellaneous hobbies. This website is here
@@ -44,8 +44,8 @@ const IndexPage = ({ data }) => {
 							gridRowStart: 1,
 							gridRowEnd: 2
 						}}>
-							<Link to="/projects">
-								<FontAwesomeIcon icon={faProjectDiagram} />
+							<Link to="/posts">
+								<FontAwesomeIcon icon={faPen} />
 							</Link>
 						</div>
 						<div style={{
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
 							gridRowStart: 1,
 							gridRowEnd: 2
 						}}>
-							Check out a list of <Link to="/projects">my projects</Link>
+							Read some of <Link to="/posts">my posts</Link>
 						</div>
 
 						<div style={{
@@ -62,6 +62,25 @@ const IndexPage = ({ data }) => {
 							gridColumnEnd: 2,
 							gridRowStart: 2,
 							gridRowEnd: 3
+						}}>
+							<Link to="/projects">
+								<FontAwesomeIcon icon={faProjectDiagram} />
+							</Link>
+						</div>
+						<div style={{
+							gridColumnStart: 2,
+							gridColumnEnd: 3,
+							gridRowStart: 2,
+							gridRowEnd: 3
+						}}>
+							Check out a list of <Link to="/projects">my projects</Link>
+						</div>
+
+						<div style={{
+							gridColumnStart: 1,
+							gridColumnEnd: 2,
+							gridRowStart: 3,
+							gridRowEnd: 4
 						}}>
 							<a href="https://github.com/penguinsnail/">
 								<FontAwesomeIcon icon={faCode} />
@@ -70,32 +89,13 @@ const IndexPage = ({ data }) => {
 						<div style={{
 							gridColumnStart: 2,
 							gridColumnEnd: 3,
-							gridRowStart: 2,
-							gridRowEnd: 3
+							gridRowStart: 3,
+							gridRowEnd: 4
 						}}>
 							Take a look at the code on <a href="https://github.com/penguinsnail/">my GitHub</a>
 						</div>
-
-						<div style={{
-							gridColumnStart: 1,
-							gridColumnEnd: 2,
-							gridRowStart: 3,
-							gridRowEnd: 4
-						}}>
-							<Link to="/posts">
-								<FontAwesomeIcon icon={faPen} />
-							</Link>
-						</div>
-						<div style={{
-							gridColumnStart: 2,
-							gridColumnEnd: 3,
-							gridRowStart: 3,
-							gridRowEnd: 4
-						}}>
-							Read some of <Link to="/posts">my posts</Link>
-						</div>
 					</div>
-					<Img className="portrait" fluid={data.file.childImageSharp.fluid} />
+					<Img className="home-portrait" fluid={data.file.childImageSharp.fluid} />
 				</div>
 			</div>
 		</Layout>
