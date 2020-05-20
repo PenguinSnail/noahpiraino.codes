@@ -21,9 +21,9 @@ For the past few months now I've been getting into 35mm photography. I've always
 
 Overall the process went better than expected the first time, with only a minor hiccup involving measuring out some chemicals halfway through. It was really awesome to get to put the blank film into the tank, pour some stuff in for a few minutes, and get physical images out!
 
-![Developing supplies](../../assets/20-04-09_supplies.jpg)
+![Developing supplies](../../../assets/2020-04-11/supplies.jpg)
 
-![Developed negatives](../../assets/20-04-09_negatives.jpg)
+![Developed negatives](../../../assets/2020-04-11/negatives.jpg)
 
 | Supplies                 | Purpose                                                                         | Cost     |
 |--------------------------|---------------------------------------------------------------------------------|----------|

@@ -22,9 +22,10 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							maxWidth: 1000,
+							maxWidth: 800,
 							showCaptions: true,
-							markdownCaptions: true,
+							// this used to work, but now if it's true an error is printed in place of the captions
+							markdownCaptions: false,
 							wrapperStyle: 'text-align: center; color: gray; font-size: 0.9em;',
 							tracedSVG: true,
 						},

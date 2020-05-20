@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
 							gridRowStart: 1,
 							gridRowEnd: 2
 						}}>
-							<Link to="/posts">
+							<Link to="/posts" aria-label="posts">
 								<FontAwesomeIcon icon={faPen} />
 							</Link>
 						</div>
@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
 							gridRowStart: 2,
 							gridRowEnd: 3
 						}}>
-							<Link to="/projects">
+							<Link to="/projects" aria-label="projects">
 								<FontAwesomeIcon icon={faProjectDiagram} />
 							</Link>
 						</div>
@@ -82,7 +82,7 @@ const IndexPage = ({ data }) => {
 							gridRowStart: 3,
 							gridRowEnd: 4
 						}}>
-							<a href="https://github.com/penguinsnail/">
+							<a href="https://github.com/penguinsnail/" aria-label="github">
 								<FontAwesomeIcon icon={faCode} />
 							</a>
 						</div>

@@ -11,13 +11,13 @@ const Footer = () => (
 		<hr className="footer-divider" />
 		<div className="footer-content">
 			<div className="footer-icons">
-				<a className="footer-icon-link" href="https://github.com/penguinsnail/">
+				<a className="footer-icon-link" href="https://github.com/penguinsnail/" aria-label="github">
 					<FontAwesomeIcon icon={faGithubSquare} />
 				</a>
-				<a className="footer-icon-link" href="/feeds/rss.xml">
+				<a className="footer-icon-link" href="/feeds/rss.xml" aria-label="rss feed">
 					<FontAwesomeIcon icon={faRssSquare} />
 				</a>
-				<a className="footer-icon-link" href="mailto:noahapiraino@gmail.com?subject=Hello!&body=Hi%20Noah%2C%0D%0A">
+				<a className="footer-icon-link" href="mailto:noahapiraino@gmail.com?subject=Hello!&body=Hi%20Noah%2C%0D%0A" aria-label="email">
 					<FontAwesomeIcon icon={faEnvelopeSquare} />
 				</a>
 			</div>
