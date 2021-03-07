@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Noah Piraino Codes',
+		title: 'Noah Piraino',
 		description: 'A small personal blog and portfolio',
 		author: 'Noah Piraino',
 		siteUrl: 'https://noahpiraino.me/',
