@@ -3,7 +3,7 @@ module.exports = {
 		title: 'Noah Piraino Codes',
 		description: 'A small personal blog and portfolio',
 		author: 'Noah Piraino',
-		siteUrl: 'https://noahpiraino.codes/',
+		siteUrl: 'https://noahpiraino.me/',
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
